@@ -44,14 +44,12 @@ if [ "$(uname)" == "Darwin" ]; then # osx
     brew install llvm
 else #linux
     sudo apt-get update
-    sudo apt-get -y install --no-install-recommends \
+    sudo apt-get -y install  \
         lsb-release \
         rsync \
         software-properties-common \
         wget \
-        libvulkan1 \
-        vulkan-utils
-
+        libvulkan1 
     #install clang and build tools
     VERSION=$(lsb_release -rs | cut -d. -f1)
     # Since Ubuntu 17 clang is part of the core repository
